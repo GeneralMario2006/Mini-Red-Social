@@ -11,16 +11,18 @@ import java.util.List;
  * @author mr587
  */
 public class PublicacionDTO {
-    Long id;
+    Long id, cantidad;
     String titulo, descripcion, rutaImagen;
     private List<String> comentarios;
+    
 
-    public PublicacionDTO(Long id, String titulo, String descripcion, String rutaImagen, List<String> comentarios) {
+    public PublicacionDTO(Long id, String titulo, String descripcion, String rutaImagen, List<String> comentarios, Long cantidad) {
         this.id= id;
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.rutaImagen = rutaImagen;
         this.comentarios= comentarios;
+        this.cantidad= cantidad;
     }
     
 
@@ -63,6 +65,14 @@ public class PublicacionDTO {
 
     public void setComentarios(List<String> comentarios) {
         this.comentarios = comentarios;
+    }
+
+    public Long getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(Long cantidad) {
+        this.cantidad = cantidad;
     }
     
 }

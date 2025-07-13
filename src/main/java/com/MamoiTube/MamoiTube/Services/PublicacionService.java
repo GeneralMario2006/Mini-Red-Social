@@ -55,13 +55,16 @@ public class PublicacionService {
         List<String> comentarios = pub.getComentarios().stream()
             .map(Comentarios::getComentario)
             .collect(Collectors.toList());
+        
+        Long likes= likeRepository.countByPublicacionId(pub.getId());
 
         return new PublicacionDTO(
             pub.getId(),
             pub.getTitulo(),
             pub.getDescripcion(),
             pub.getRutaImagen(),
-            comentarios
+            comentarios,
+                likes
         );
     }).collect(Collectors.toList());
     }
